@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Wool.DevChallenge.Api.Application.Queries.GetSortedProductsQuery.SortingStrategy
 {
@@ -17,18 +18,17 @@ namespace Wool.DevChallenge.Api.Application.Queries.GetSortedProductsQuery.Sorti
             switch (sortOption)
             {
                 case ProductSortOption.Low:
-                    return new PriceLowSortStrategy();
+                    return _provider.GetRequiredService<PriceLowSortStrategy>();
                 case ProductSortOption.High:
-                    return new PriceHighSortStrategy();
+                    return _provider.GetRequiredService<PriceHighSortStrategy>();
                 case ProductSortOption.Ascending:
-                    return new NameAscendingSortStrategy();
+                    return _provider.GetRequiredService<NameAscendingSortStrategy>();
                 case ProductSortOption.Descending:
-                    return new NameDescendingSortStrategy();
+                    return _provider.GetRequiredService<NameDescendingSortStrategy>();
                 case ProductSortOption.Recommended:
-                    return new RecommendedSortStrategy(_provider);
+                    return _provider.GetRequiredService<RecommendedSortStrategy>();
                 default:
-                    return new NoSortStrategy();
-
+                    return _provider.GetRequiredService<NoSortStrategy>();
             }
         }
     }
