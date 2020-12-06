@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wool.DevChallenge.Api", "Wool.DevChallenge.Api\Wool.DevChallenge.Api.csproj", "{6BB9E2A8-8A5B-4759-ABF3-B24B6582F416}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wool.DevChallenge.Api.Tests", "Wool.DevChallenge.Api.Tests\Wool.DevChallenge.Api.Tests.csproj", "{7372C390-1C05-45A1-8B1A-362A17DA6333}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BB9E2A8-8A5B-4759-ABF3-B24B6582F416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BB9E2A8-8A5B-4759-ABF3-B24B6582F416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BB9E2A8-8A5B-4759-ABF3-B24B6582F416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BB9E2A8-8A5B-4759-ABF3-B24B6582F416}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7372C390-1C05-45A1-8B1A-362A17DA6333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7372C390-1C05-45A1-8B1A-362A17DA6333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7372C390-1C05-45A1-8B1A-362A17DA6333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7372C390-1C05-45A1-8B1A-362A17DA6333}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F01EB8A-D3A7-4203-BAA2-AF914F551EE8}
+	EndGlobalSection
+EndGlobal
