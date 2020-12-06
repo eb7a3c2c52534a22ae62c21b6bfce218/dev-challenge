@@ -38,10 +38,6 @@ namespace Wool.DevChallenge.Api
             services.AddScoped<LocalTrolleyCalculationService>()
                 .AddScoped<ITrolleyCalculationService, LocalTrolleyCalculationService>(s=>s.GetService<LocalTrolleyCalculationService>());
 
-            //services.AddHttpClient<ITrolleyCalculationService, RemoteTrolleyCalculationService>();
-            //services.AddHttpClient<ITrolleyCalculationService, LocalTrolleyCalculationService>();
-
-
             services.AddHttpClient<IRemoteProductsService, RemoteProductsService>();
             services.AddHttpClient<IRemoteShopperHistoryService, RemoteShopperHistoryService>();
 
