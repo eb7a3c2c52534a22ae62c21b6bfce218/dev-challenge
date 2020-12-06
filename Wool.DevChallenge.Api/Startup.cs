@@ -28,8 +28,6 @@ namespace Wool.DevChallenge.Api
         {
             services.Configure<AppSettings>(Configuration.GetSection(nameof(AppSettings)));
 
-            var trolleyOption = Configuration["TrolleyOption"]??"remote";
-
             services.AddScoped<ITrolleyCalculatorFactory, TrolleyCalculatorFactory>();
 
             services.AddScoped<RemoteTrolleyCalculationService>()
@@ -38,10 +36,25 @@ namespace Wool.DevChallenge.Api
             services.AddScoped<LocalTrolleyCalculationService>()
                 .AddScoped<ITrolleyCalculationService, LocalTrolleyCalculationService>(s=>s.GetService<LocalTrolleyCalculationService>());
 
+            services.AddScoped<ISortingStrategyFactory, SortingStrategyFactory>();
+
+            services.AddScoped<PriceLowSortStrategy>()
+                .AddScoped<ISortStrategy, PriceLowSortStrategy>(s => s.GetService<PriceLowSortStrategy>());
+            services.AddScoped<PriceHighSortStrategy>()
+                .AddScoped<ISortStrategy, PriceHighSortStrategy>(s => s.GetService<PriceHighSortStrategy>());
+            services.AddScoped<NameAscendingSortStrategy>()
+                .AddScoped<ISortStrategy, NameAscendingSortStrategy>(s => s.GetService<NameAscendingSortStrategy>());
+            services.AddScoped<NameDescendingSortStrategy>()
+                .AddScoped<ISortStrategy, NameDescendingSortStrategy>(s => s.GetService<NameDescendingSortStrategy>());
+            services.AddScoped<RecommendedSortStrategy>()
+                .AddScoped<ISortStrategy, RecommendedSortStrategy>(s => s.GetService<RecommendedSortStrategy>());
+            services.AddScoped<NoSortStrategy>()
+                .AddScoped<ISortStrategy, NoSortStrategy>(s => s.GetService<NoSortStrategy>());
+
+
             services.AddHttpClient<IRemoteProductsService, RemoteProductsService>();
             services.AddHttpClient<IRemoteShopperHistoryService, RemoteShopperHistoryService>();
 
-            services.AddScoped<ISortingStrategyFactory, SortingStrategyFactory>();
 
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddAutoMapper(Assembly.GetExecutingAssembly());

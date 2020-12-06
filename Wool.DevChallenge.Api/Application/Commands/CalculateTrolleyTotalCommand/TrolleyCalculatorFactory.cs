@@ -21,7 +21,7 @@ namespace Wool.DevChallenge.Api.Application.Commands.CalculateTrolleyTotalComman
             switch (calculatorType)
             {
                 case TrolleyCalculatorType.Local:
-                    return _provider.GetRequiredService<ITrolleyCalculationService>();
+                    return _provider.GetRequiredService<LocalTrolleyCalculationService>();
 
                 default:
                         return _provider.GetRequiredService<RemoteTrolleyCalculationService>();
